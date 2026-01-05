@@ -16,8 +16,8 @@ type Post = {
 export default function Article() {
   const { id } = useParams();
 
-  const [post, setPost] = useState<Post | null>(null)
-  const [isLoading, setIsLoading] = useState(true)
+  const [post, setPost] = useState<Post | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   // APIでpostを取得する処理をuseEffectで実行します。
   useEffect(() => {

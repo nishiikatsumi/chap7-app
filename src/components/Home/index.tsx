@@ -15,8 +15,8 @@ type Post = {
 
 export default function Home() {
 
-  const [posts, setPosts] = useState<Post[]>([])
-  const [isLoading, setIsLoading] = useState(true)
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   // APIでpostsを取得する処理をuseEffectで実行します。
   useEffect(() => {
@@ -29,7 +29,7 @@ export default function Home() {
     }
 
     fetcher()
-  }, [])
+  }, []);
 
   if (isLoading) {
     return <div>読み込み中...</div>;
