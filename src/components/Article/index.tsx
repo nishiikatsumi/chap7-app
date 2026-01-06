@@ -4,14 +4,7 @@ import { getDateString } from '../../utils/getDateString.js';
 
 import classes from './Article.module.css';
 import DOMPurify from 'dompurify';
-
-type Post = {
-  id: string;
-  title: string;
-  content: string;
-  createdAt: string;
-  categories?: string[];
-};
+import type { Post } from '../../utils/Post';
 
 export default function Article() {
   const { id } = useParams();
@@ -45,7 +38,7 @@ export default function Article() {
       <main className={classes.main}>
         <article key={post.id} className={classes.card}>
           <div>
-            <img src="/800x400.png" />
+            <img src={post.thumbnailUrl} />
           </div>
           <div className={classes.header}>
             <span className={classes.date}>{getDateString(post.createdAt)}</span>
@@ -55,7 +48,7 @@ export default function Article() {
               ))}
             </div>
           </div>
-          <h2 className={classes.title}>APIで取得した{post.title}</h2>
+          <h2 className={classes.title}>{post.title}</h2>
           <p
             className={classes.content}
             dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.content) }}

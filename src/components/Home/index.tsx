@@ -4,14 +4,7 @@ import { getDateString } from '../../utils/getDateString.js';
 
 import classes from './Home.module.css';
 import DOMPurify from 'dompurify';
-
-type Post = {
-  id: string;
-  title: string;
-  content: string;
-  createdAt: string;
-  categories?: string[];
-};
+import type { Post } from '../../utils/Post';
 
 export default function Home() {
 
@@ -57,7 +50,7 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-              <h2 className={classes.title}>APIで取得した{article.title}</h2>
+              <h2 className={classes.title}>{article.title}</h2>
               <p
                 className={classes.excerpt}
                 dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(article.content) }}
