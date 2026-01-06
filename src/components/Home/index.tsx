@@ -4,7 +4,7 @@ import { getDateString } from '../../utils/getDateString.js';
 
 import classes from './Home.module.css';
 import DOMPurify from 'dompurify';
-import type { Post } from '../../utils/Post';
+import type { Post } from '../../types/Post';
 
 export default function Home() {
 

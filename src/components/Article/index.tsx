@@ -4,7 +4,7 @@ import { getDateString } from '../../utils/getDateString.js';
 
 import classes from './Article.module.css';
 import DOMPurify from 'dompurify';
-import type { Post } from '../../utils/Post';
+import type { Post } from '../../types/Post';
 
 export default function Article() {
   const { id } = useParams();
